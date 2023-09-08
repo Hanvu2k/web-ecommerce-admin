@@ -9,7 +9,7 @@ import "./Chat.css";
 import io from "socket.io-client";
 import { DebounceInput } from "react-debounce-input";
 
-const socket = io("http://localhost:5000");
+const socket = io("http://localhost:5000 || https://ecommerce-server-hqbv.onrender.com");
 
 const Chat = () => {
   const {
