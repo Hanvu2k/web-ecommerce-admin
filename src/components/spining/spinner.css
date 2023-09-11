@@ -14,7 +14,7 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.spinner-spinning @keyframes rotate {
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
