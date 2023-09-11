@@ -46,7 +46,7 @@ const LayoutPage = () => {
 
   const handleLogout = () => {
     dispatch(apiConfig.logout());
-  
+    navigate(routes.login);
     dispatch(userActions.logoutHandler());
   };
 
