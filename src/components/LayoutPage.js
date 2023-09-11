@@ -39,6 +39,12 @@ const LayoutPage = () => {
     }
   }, [dispatch, isAuth]);
 
+  useEffect(() => {
+    if (!isAuth) {
+      navigate(routes.login);
+    }
+  }, [dispatch, isAuth, navigate]);
+
   const handleLogout = () => {
     dispatch(apiConfig.logout());
     navigate(routes.login);
