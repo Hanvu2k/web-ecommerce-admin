@@ -45,9 +45,9 @@ const LayoutPage = () => {
   }, [isAuth, navigate]);
 
   const handleLogout = () => {
-    dispatch(userActions.logoutHandler());
     dispatch(apiConfig.logout());
-    navigate(routes.login);
+  
+    dispatch(userActions.logoutHandler());
   };
 
   if (isLogin) return <Login />;
