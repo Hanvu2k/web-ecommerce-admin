@@ -31,18 +31,13 @@ const LayoutPage = () => {
   const isLogin = useMatch(routes.login);
 
   useEffect(() => {
-    const featchData = async () => {
-      await dispatch(apiConfig.getMe());
-    };
-    featchData();
-  }, [dispatch]);
-
-  useEffect(() => {
-    // Redirect to home page if the user is already authenticated
-    if (!isAuth) {
-      return navigate(routes.login);
+    if (isAuth) {
+      const featchData = async () => {
+        await dispatch(apiConfig.getMe());
+      };
+      featchData();
     }
-  }, [isAuth, navigate]);
+  }, [dispatch, isAuth]);
 
   const handleLogout = () => {
     dispatch(apiConfig.logout());

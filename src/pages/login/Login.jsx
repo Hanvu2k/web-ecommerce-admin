@@ -13,7 +13,9 @@ function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  const { isLoading, err, isAuth } = useSelector((state) => state.user);
+  const { isLoading, err } = useSelector((state) => state.user);
+
+  const isAuth = localStorage.getItem("jwt");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
