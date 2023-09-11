@@ -13,7 +13,7 @@ import { useNavigate, Outlet, useMatch } from "react-router-dom";
 import routes from "../configs/routes";
 import SubMenu from "antd/es/menu/SubMenu";
 import { Login } from "../pages/login";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { userActions } from "../store/userSlice";
 import apiConfig from "../api/apiConfig";
 
@@ -26,9 +26,9 @@ const LayoutPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { isAuth } = useSelector((state) => state.user);
-
   const isLogin = useMatch(routes.login);
+
+  const isAuth = localStorage.getItem("jwt");
 
   useEffect(() => {
     if (isAuth) {
