@@ -6,7 +6,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LayoutPage />}>
+        <Route path="/login" element={<LayoutPage />}>
           {publicRoutes.map((route, index) => (
             <Route key={index} path={route.path} element={route.component} />
           ))}
