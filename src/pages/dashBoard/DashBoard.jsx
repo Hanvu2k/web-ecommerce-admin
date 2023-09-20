@@ -58,6 +58,9 @@ function DashBoard() {
       title: "Total",
       dataIndex: "total",
       key: "total",
+      render: (total) => (
+        <>{formatNumber(total)} VND</>
+      ),
     },
     {
       title: "Delivery",
